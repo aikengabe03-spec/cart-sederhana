@@ -14,7 +14,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String? notificationMessage;
 
-  // Data produk disimpan langsung dalam bentuk List of Map
   final List<Map<String, dynamic>> products = [
     {
       'name': 'RAM PC DDR5 16GB',
@@ -58,7 +57,6 @@ class _MyAppState extends State<MyApp> {
     },
   ];
 
-  // Hitung total item & total harga
   int get totalQuantity =>
       products.fold(0, (sum, item) => sum + (item['quantity'] as int));
 
@@ -104,7 +102,6 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            // Banner pesan notifikasi saat long press/hold
             if (notificationMessage != null)
               Container(
                 margin: const EdgeInsets.fromLTRB(16, 12, 16, 4),
@@ -151,7 +148,6 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
 
-            // Daftar Produk
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(16),
@@ -330,7 +326,6 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
 
-            // Total Ringkasan Dinamis
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
               decoration: BoxDecoration(
